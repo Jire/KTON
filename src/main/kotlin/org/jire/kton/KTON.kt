@@ -27,11 +27,11 @@ class KTON {
 	operator fun get(key: String) = vars[key]
 
 	/**
-	 * Gets the corresponding KTON body of a key, potentially `null`.
+	 * Gets the corresponding KTON body of a key.
 	 *
 	 * @param key The key of the body.
 	 */
-	operator fun invoke(key: String) = if (vars.containsKey(key)) get(key) as KTON else null
+	operator fun invoke(key: String) = get(key)!! as KTON
 
 	/**
 	 * Gets the corresponding KTON array of an index.
