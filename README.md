@@ -6,7 +6,7 @@ This library is licensed under [GPL 3.0](http://www.gnu.org/licenses/gpl-3.0.en.
 ---
 
 `KTON` allows you to notate objects in an easy syntax using pure Kotlin. This is mostly a toy project
-but it may be useful for certain cases.
+but it may be useful for certain cases. I'd like to make conversion to JSON and provide more advanced features.
 
 The following shows the differences between JSON, XML, and KTON. (Data used from [http://json.org/example.html](http://json.org/example.html))
 
