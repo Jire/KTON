@@ -60,14 +60,19 @@ val menu = kton {
 
 Accessing data from a KTON is done with concise syntax. Using the above example...
 
-Value access through `get` operator:
+```kotlin
 
-`menu["id"]` => `"file"`, `menu["value"]` => `"File"`
+// Value access through get operator:
+val id = menu["id"] // "file"
+val value = menu["value"] // "File"
 
-Body access through `invoke` operator:
+// Body access through invoke operator:
+val popup = menu("popup")
+val menuitems = popup("menuitems")
 
-`val popup = menu("popup")`, `val menuitems = popup("menuitem")`
-
-Array access through `get` operator specifying index:
-
-`menuitems[0]["value"]` => `"New"`, `menuitems[3]["onclick"]` => `"CloseDoc()"`
+// Array access through get operator specifying index:
+val newValue = menuitems[0]["value"] // "New"
+val open = menuitems[1]
+val openValue = open["value"] // "Open"
+val closeOnClick = menuitems[2]["onclick"] // "CloseDoc()"
+```
