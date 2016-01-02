@@ -1,5 +1,5 @@
 ##KTON
-_Kotlin object notation_
+_Object notation in pure Kotlin!_
 
 This library is licensed under [GPL 3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
