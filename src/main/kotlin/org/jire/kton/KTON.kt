@@ -31,7 +31,7 @@ class KTON {
 	 *
 	 * @param key The key of the body.
 	 */
-	operator fun invoke(key: String) = get(key) as KTON
+	operator fun invoke(key: String) = if (vars.containsKey(key)) get(key) as KTON else null
 
 	/**
 	 * Gets the corresponding KTON array of an index.
@@ -72,7 +72,7 @@ class KTON {
  *
  * @param body The body of the KTON used to declare more KTONs or values.
  */
-inline fun <T> kton(body: KTON.() -> T): KTON {
+inline fun <O> kton(body: KTON.() -> O): KTON {
 	val kton = KTON()
 	kton.body()
 	return kton
