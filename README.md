@@ -12,43 +12,49 @@ The following shows the differences between JSON, XML, and KTON. (Data used from
 
 **JSON:**
 
-    {
-        "menu": {
-            "id": "file",
-            "value": "File",
-            "popup": {
-                "menuitem": [
-                    { "value": "New", "onclick": "CreateNewDoc()" },
-                    { "value": "Open", "onclick": "OpenDoc()" },
-                    { "value": "Close", "onclick": "CloseDoc()" }
-                ]
-            }
+```json
+{
+    "menu": {
+        "id": "file",
+        "value": "File",
+        "popup": {
+            "menuitem": [
+                { "value": "New", "onclick": "CreateNewDoc()" },
+                { "value": "Open", "onclick": "OpenDoc()" },
+                { "value": "Close", "onclick": "CloseDoc()" }
+            ]
         }
     }
+}
+```
 
 **XML:**
 
-    <menu id="file" value="File">
-        <popup>
-            <menuitem value="New" onclick="CreateNewDoc()" />
-            <menuitem value="Open" onclick="OpenDoc()" />
-            <menuitem value="Close" onclick="CloseDoc()" />
-        </popup>
-    </menu>
+```xml
+<menu id="file" value="File">
+    <popup>
+        <menuitem value="New" onclick="CreateNewDoc()" />
+        <menuitem value="Open" onclick="OpenDoc()" />
+        <menuitem value="Close" onclick="CloseDoc()" />
+    </popup>
+</menu>
+```
 
 **KTON:**
 
-    val menu = kton {
-        "id".."file"
-        "value".."File"
-        "popup" {
-            "menuitem" {
-                arr { "value".."New"; "onclick".."CreateNewDoc()" }
-                arr { "value".."Open"; "onclick".."OpenDoc()" }
-                arr { "value".."Close"; "onclick".."CloseDoc()" }
-            }
+```kotlin
+val menu = kton {
+    "id".."file"
+    "value".."File"
+    "popup" {
+        "menuitem" {
+            arr { "value".."New"; "onclick".."CreateNewDoc()" }
+            arr { "value".."Open"; "onclick".."OpenDoc()" }
+            arr { "value".."Close"; "onclick".."CloseDoc()" }
         }
     }
+}
+```
 
 ---
 
