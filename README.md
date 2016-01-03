@@ -1,3 +1,5 @@
+[![Kotlin](https://img.shields.io/badge/kotlin-1.0.0--beta--4584-blue.svg)](http://kotlinlang.org) [![DUB](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/Jire/KTON/blob/master/LICENSE) [![Issues](https://img.shields.io/github/issues/Jire/KTON.svg)](https://github.com/Jire/KTON/issues?q=is%3Aopen)
+
 ##KTON
 _Object notation in pure Kotlin!_
 
