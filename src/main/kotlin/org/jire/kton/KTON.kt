@@ -31,7 +31,7 @@ class KTON {
 	 *
 	 * @param key The key of the body.
 	 */
-	operator fun invoke(key: String) = get(key)!! as KTON
+	operator fun invoke(key: String) = this[key]!! as KTON
 
 	/**
 	 * Gets the corresponding KTON array of an index.
@@ -43,7 +43,7 @@ class KTON {
 	/**
 	 * Establishes (maps) a value to the current string in a KTON.
 	 */
-	operator fun <V : Any> String.rangeTo(value: V) {
+	infix fun <V : Any> String.to(value: V) {
 		vars[this] = value
 	}
 
@@ -61,7 +61,7 @@ class KTON {
 	 *
 	 * @param body The body representing the new array KTON.
 	 */
-	fun <O> KTON.arr(body: KTON.() -> O) {
+	infix fun <O> KTON.arr(body: KTON.() -> O) {
 		arrays.add(kton(body))
 	}
 

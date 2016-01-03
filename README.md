@@ -1,7 +1,7 @@
 ##KTON
 _Object notation in pure Kotlin!_
 
-This library is licensed under [GPL 3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
+This library is licensed under [The MIT License](https://github.com/Jire/KTON/blob/master/LICENSE).
 
 ---
 
@@ -44,13 +44,13 @@ The following shows the differences between JSON, XML, and KTON. (Data used from
 
 ```kotlin
 val menu = kton {
-    "id".."file"
-    "value".."File"
+    "id" to "file"
+    "value" to "File"
     "popup" {
         "menuitem" {
-            arr { "value".."New"; "onclick".."CreateNewDoc()" }
-            arr { "value".."Open"; "onclick".."OpenDoc()" }
-            arr { "value".."Close"; "onclick".."CloseDoc()" }
+            arr { "value" to "New"; "onclick" to "CreateNewDoc()" }
+            arr { "value" to "Open"; "onclick" to "OpenDoc()" }
+            arr { "value" to "Close"; "onclick" to "CloseDoc()" }
         }
     }
 }
