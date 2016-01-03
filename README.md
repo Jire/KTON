@@ -68,7 +68,7 @@ val value = menu["value"] // "File"
 
 // Body access through invoke operator:
 val popup = menu("popup")
-val menuitems = popup("menuitems")
+val menuitems = popup("menuitem")
 
 // Array access through get operator specifying index:
 val newValue = menuitems[0]["value"] // "New"
