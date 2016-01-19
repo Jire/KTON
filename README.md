@@ -1,4 +1,4 @@
-[![Kotlin](https://img.shields.io/badge/kotlin-1.0.0--beta--4584-blue.svg)](http://kotlinlang.org) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Jire/KTON/blob/master/LICENSE) [![](https://jitpack.io/v/Jire/KTON.svg)](https://jitpack.io/#Jire/KTON)
+[![Build Status](https://travis-ci.org/Jire/KTON.svg?branch=master)](https://travis-ci.org/Jire/KTON) [![Kotlin](https://img.shields.io/badge/kotlin-1.0.0--beta--4589-blue.svg)](http://kotlinlang.org) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Jire/KTON/blob/master/LICENSE) [![](https://jitpack.io/v/Jire/KTON.svg)](https://jitpack.io/#Jire/KTON)
 
 
 ##KTON
