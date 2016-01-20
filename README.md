@@ -50,11 +50,11 @@ val menu = kton {
     "id" to "file"
     "value" to "File"
     "popup" {
-        "menuitem" {
-            arr { "value" to "New"; "onclick" to "CreateNewDoc()" }
-            arr { "value" to "Open"; "onclick" to "OpenDoc()" }
-            arr { "value" to "Close"; "onclick" to "CloseDoc()" }
-        }
+        "menuitem" [
+            { "value" to "New"; "onclick" to "CreateNewDoc()" },
+            { "value" to "Open"; "onclick" to "OpenDoc()" },
+            { "value" to "Close"; "onclick" to "CloseDoc()" }
+        ]
     }
 }
 ```

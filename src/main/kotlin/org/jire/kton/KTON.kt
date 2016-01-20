@@ -59,10 +59,10 @@ class KTON {
 	/**
 	 * Establishes an array to the current KTON.
 	 *
-	 * @param body The body representing the new array KTON.
+	 * @param bodies The bodies representing elements in the new array.
 	 */
-	infix fun <O> KTON.arr(body: KTON.() -> O) {
-		arrays.add(kton(body))
+	operator fun <O> String.get(vararg bodies: KTON.() -> O) {
+		bodies.forEach { arrays.add(kton(it)) }
 	}
 
 }
