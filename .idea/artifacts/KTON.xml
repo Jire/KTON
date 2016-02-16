@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="KTON">
-    <output-path>$PROJECT_DIR$/out/artifacts/KTON</output-path>
-    <root id="archive" name="KTON.jar">
-      <element id="module-output" name="KTON" />
-    </root>
-  </artifact>
-</component>
