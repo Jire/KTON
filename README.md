@@ -1,10 +1,9 @@
-[![Build Status](https://travis-ci.org/Jire/KTON.svg?branch=master)](https://travis-ci.org/Jire/KTON) [![Kotlin](https://img.shields.io/badge/kotlin-1.0.0-blue.svg)](http://kotlinlang.org) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Jire/KTON/blob/master/LICENSE) [![](https://jitpack.io/v/Jire/KTON.svg)](https://jitpack.io/#Jire/KTON)
-
-
 ##KTON
 _Object notation in pure Kotlin!_
 
-This library is licensed under [The MIT License](https://github.com/Jire/KTON/blob/master/LICENSE).
+[![Build Status](https://travis-ci.org/Jire/KTON.svg?branch=master)](https://travis-ci.org/Jire/KTON)
+[![Dependency Status](https://www.versioneye.com/user/projects/579a95b33815c8004c5f7bf2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/579a95b33815c8004c5f7bf2)
+[![license](https://img.shields.io/github/license/Jire/KTON.svg)](https://github.com/Jire/KTON/blob/master/LICENSE.txt)
 
 ---
 

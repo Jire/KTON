@@ -1,27 +1,141 @@
-group 'org.jire.kton'
-version '0.2'
+/*
+ * Copyright 2016 Thomas Nappo
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-apply plugin: 'java'
-apply plugin: 'kotlin'
+buildscript {
+    ext.your_name = 'Thomas Nappo'
+    ext.your_email = 'technology@live.com'
+    ext.your_github_name = 'Jire'
+
+    ext.project_name = 'KTON'
+    ext.project_description = 'Object notation in pure Kotlin!'
+    ext.project_group = 'org.jire.kton'
+    ext.project_artifact = 'KTON'
+    ext.project_version = '1.0.1'
+    ext.project_license = 'The Apache Software License, Version 2.0' // the full license name
+    ext.project_license_tag = 'Apache-2.0' // the license tag name
+    ext.project_license_url = 'https://www.apache.org/licenses/LICENSE.txt-2.0.txt' // link to the license
+
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
+group project_group
+version project_version
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
+
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId project_group
+            artifactId project_artifact
+            version project_version
+            artifact sourcesJar
+            artifact javadocJar
+            pom.withXml {
+                asNode().children().last() + {
+                    resolveStrategy = Closure.DELEGATE_FIRST
+                    name project_name
+                    description project_description
+                    url "https://github.com/$your_github_name/$project_name"
+                    scm {
+                        url "https://github.com/$your_github_name/$project_name"
+                        connection "scm:git:git://github.com/$your_github_name/${project_name}.git"
+                        developerConnection "scm:git:ssh:git@github.com:$your_github_name/${project_name}.git"
+                    }
+                    licenses {
+                        license {
+                            name project_license
+                            url project_license_url
+                            distribution 'repo'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id your_github_name
+                            name your_name
+                            email your_email
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_API_KEY')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = project_name
+        licenses = [project_license_tag]
+        publicDownloadNumbers = true
+        websiteUrl = "https://github.com/$your_github_name/$project_name"
+        issueTrackerUrl = "https://github.com/$your_github_name/$project_name/issues"
+        vcsUrl = "https://github.com/$your_github_name/${project_name}.git"
+        githubRepo = "$your_github_name/$project_name"
+        version {
+            name = project_version
+            vcsTag = project_version
+            gpg {
+                sign = true
+            }
+        }
+    }
+}
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	testCompile group: 'junit', name: 'junit', version: '4.11'
-
-	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-buildscript {
-	ext.kotlin_version = '1.0.0'
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-	}
-}
-sourceSets {
-	main.java.srcDirs += 'src/main/kotlin'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
