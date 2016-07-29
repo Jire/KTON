@@ -1,9 +1,23 @@
-##KTON [ ![Download](https://api.bintray.com/packages/jire/maven/KTON/images/download.svg) ](https://bintray.com/jire/maven/KTON/_latestVersion)
+##KTON
 _Object notation in pure Kotlin!_
 
 [![Build Status](https://travis-ci.org/Jire/KTON.svg?branch=master)](https://travis-ci.org/Jire/KTON)
 [![Dependency Status](https://www.versioneye.com/user/projects/579a95b33815c8004c5f7bf2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/579a95b33815c8004c5f7bf2)
 [![license](https://img.shields.io/github/license/Jire/KTON.svg)](https://github.com/Jire/KTON/blob/master/LICENSE.txt)
+
+### Gradle
+```groovy
+compile 'org.jire.kton:KTON:1.0.1'
+```
+
+### Maven
+```xml
+<dependency>
+    <groupId>org.jire.kton</groupId>
+    <artifactId>KTON</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
 
 ---
 
