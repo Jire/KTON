@@ -116,6 +116,7 @@ bintray {
     pkg {
         repo = 'maven'
         name = project_name
+        desc = project_description
         licenses = [project_license_tag]
         publicDownloadNumbers = true
         websiteUrl = "https://github.com/$your_github_name/$project_name"
