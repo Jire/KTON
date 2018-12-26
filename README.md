@@ -1,4 +1,4 @@
-##KTON
+## KTON
 _Object notation in pure Kotlin!_
 
 [![Build Status](https://travis-ci.org/Jire/KTON.svg?branch=master)](https://travis-ci.org/Jire/KTON)
